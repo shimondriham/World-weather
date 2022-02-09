@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/bootstrap.min.css">
+  <link rel="stylesheet" href="style/weather.css">
+  <title>Document</title>
+  <script src="js_weather/app_weather.js"></script>
+</head>
+<body>
+  <nav class="container-fluid  text-black p-2">
+    <div class="container d-block d-md-flex">
+      <div class="d-flex col-12 col-md-6 ">
+        <input id="id_input" type="search" placeholder="Enter name of city you interested..." class="form-control w-50" >
+        <button id="search_btn" class="btn btn-outline-dark " >Search</button>    
+      </div>
+      <div class="d-flex justify-content-between col-12 col-md-6 ">
+      <p id="id_input1"></p>
+      <button id="dgree_change" class="btn btn-outline-info float-end" >°F</button>
+    </div>
+    </div>
+  </nav>
+
+  <main class="container-fluid">
+    <div class="container text-center" id= "idwait">
+      <h1 class="p-2 text" >The Weather in <span id="id_city"> </span></h1>
+      <div class="border col-lg-6 mx-auto p-3 infor">
+        <h3>Condition: <span id="id_condition"></span></h3>
+        <h3>Temp: <span id="id_temp1"></span> <span id="id_temp2"></span></h3>
+        <h5>feels like: <span id="feels_like"></span> <span id="feels_like2"></span></h5>
+        <h4>Wind: <span id="id_wind"></span></h4>
+        <div class="text-center">
+        <img id="id_img" src="http://openweathermap.org/img/wn/10d@2x.png" class="w-25" >
+      </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
