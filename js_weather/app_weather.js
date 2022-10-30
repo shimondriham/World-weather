@@ -3,11 +3,12 @@ window.onload = function(){
   declareEvents();
   declareEvents2();
 }
-
+let flag = true;
 const declareEvents = function(){
   let search_btn = document.querySelector("#search_btn");
   search_btn.addEventListener("click", function(){
     let input_val = document.querySelector("#id_input").value;
+    flag = true;   
     doApi(input_val)
   })
 }
@@ -31,11 +32,12 @@ const doApi = function(_place){
        let json_obj = JSON.parse(xhr.response);
        console.log(json_obj);
      showInfo(json_obj)      
-     document.querySelector("#id_input1").innerHTML="";
-          
     }
     else if (xhr.status == 404){
-      document.querySelector("#id_input1").innerHTML="please type correct name of city";
+      if (flag == true){
+         alert("Location not found Please type the correct name for the location");
+         flag = false;
+      }
     }
     
   })
